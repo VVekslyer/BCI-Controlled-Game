@@ -1,0 +1,10 @@
+{
+    "cSpell.words": [
+        "actiondir",
+        "datadir",
+        "datas",
+        "keras"
+    ],
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
+}
