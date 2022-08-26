@@ -11,10 +11,15 @@ In this repositry you will find the following main files:
  *  model.py: The TensorFlow model, training to understand whether the user wishes to go up or down in the game.
 
 ## Demo
-![OpenBCI - Controlling a Car](https://user-images.githubusercontent.com/69658141/186831586-7b3a7d5b-26ba-4539-9a48-9b553891744a.gif)
+Watch a live demo on https://streamable.com/j884vb
+
+![image](https://user-images.githubusercontent.com/69658141/186840231-7761da8e-14bf-4594-8466-7feef80a604d.png)
+
 
 ## Pong Game
 ![image](https://user-images.githubusercontent.com/69658141/186831818-2e9eb98c-05eb-484a-bdb7-04bdf76ceef8.png)
 
 ## Acknowledgments
 This project would've been impossible without all the help I recieved from peers in the Douglas College HiPE Lab, as well as all the wonderful professors in the engineering department who had helped assemble the helmet. Thank you all very much.
+
+![cyton](https://user-images.githubusercontent.com/69658141/186837860-84206118-317c-4a2a-974a-d17bd697242b.jpg)
