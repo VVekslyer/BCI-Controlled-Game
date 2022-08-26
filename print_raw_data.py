@@ -1,8 +1,6 @@
 from pyOpenBCI import OpenBCICyton
 from collections import deque
 import time
-import numpy
-import cv2
 
 def print_raw(sample):
     print(sample.channels_data)

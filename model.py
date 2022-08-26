@@ -15,8 +15,8 @@ model = tf.keras.models.load_model(MODEL_NAME)
 reshape = (-1, 16, 60)
 model.predict(np.zeros((32,16,60)).reshape(reshape))
 
-ACTION = 'left'   # ACTION is what I'll be thinking about doing the entire time,
-# here I'm thinking about moving left
+ACTION = 'up'   # ACTION is what I'll be thinking about doing in the game
+# here I'm thinking about moving up
 FFT_MAX_HZ = 60   # max. frequency
 HM_SECONDS = 10   # approximate value
 TOTAL_ITERS = HM_SECONDS * 25
@@ -47,8 +47,8 @@ horizontal_line = np.ones((HEIGHT, 10, 3) * np.random.uniform(size=(3,)))
 vertical_line = np.ones((10, WIDTH, 3)) * np.random.uniform(size=(3,))
 
 total = 0
-right = 0
-left = 0
+up = 0
+down = 0
 none = 0
 correct = 0
 channel_datas = []
@@ -89,18 +89,18 @@ for i in range(TOTAL_ITERS):
     elif BOX_MOVE == 'model':
         choice = np.argmax(out)
         if choice == 0:
-            if ACTION == 'left':
+            if ACTION == 'up':
                 correct += 1
-            square['x1'] = MOVE_SPEED
-            square['x2'] = MOVE_SPEED
-            left += 1
+            square['y1'] = MOVE_SPEED
+            square['y2'] = MOVE_SPEED
+            up += 1
         
         elif choice == 2:
-            if ACTION == 'right':
+            if ACTION == 'down':
                 correct += 1
-            square['x1'] += MOVE_SPEED
-            square['x2'] += MOVE_SPEED
-            left += 1
+            square['y1'] += MOVE_SPEED
+            square['y2'] += MOVE_SPEED
+            up += 1
         
         else:
             if ACTION == 'none':
@@ -129,10 +129,10 @@ print(f'saving {ACTION} data...')
 np.save(os.path.join(actiondir, f'{int(time.time())}.npy'), np.array(channel_datas))
 print('done.')
 
-for action in ['left', 'right', 'none']:
+for action in ['up', 'down', 'none']:
     print(action, sum(os.path.getsize(f'data/{action}/{f}') for f in os.listdir(f'data/{action}'))/1_000_000, 'MB')
 
 print(ACTION, correct/total)
 
 with open('accuracies.csv', 'a') as f:
-    f.write(f'{int(time.time())},{ACTION},{correct/total},{MODEL_NAME},{left/total},{right/total},{none/total}\n')
+    f.write(f'{int(time.time())},{ACTION},{correct/total},{MODEL_NAME},{up/total},{down/total},{none/total}\n')

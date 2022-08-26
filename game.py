@@ -1,3 +1,4 @@
+# game.py - This is the pong game that will be controlled with the OpenBCI headset.
 import pygame
 from player import Player
 from ball import Ball
