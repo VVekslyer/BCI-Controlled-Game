@@ -1,5 +1,7 @@
 # Brain Controlled Pong Game using OpenBCI
 
+Using a BCI to control Unity games.
+
 Using OpenBCI's 16-Channel Cyton headset and machine learning to control Unity and PyGame games.
 
 
