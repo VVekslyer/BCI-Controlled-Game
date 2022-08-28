@@ -1,7 +1,10 @@
 # Brain Controlled Pong Game using OpenBCI
+
 Using OpenBCI's 16-Channel Cyton headset and machine learning to control games created in Unity and PyGame.
 
+
 ![helmet](https://user-images.githubusercontent.com/69658141/186826678-aac05fa4-972d-4054-ac93-d170ae0f7736.jpg)
+
 
 In this repositry you will find the following main files:
  *  print_raw_data.py: Allows you to test printing all 8 or 16 channels of the headset.
